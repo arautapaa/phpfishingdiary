@@ -1,0 +1,85 @@
+body {
+	background: #F8F8F8;
+}
+
+.facet-background {
+	background: #00BADB;
+}
+
+.facets label, .facets a.btn-primary {
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.facets h1 {
+	font-family: 'Leckerli One', cursive;
+	font-size: 48px;
+	padding-bottom: 50px;
+}
+
+.facets * {
+	color: #F7F7F7;
+}
+
+.facets .bootstrap-select *, .facets input {
+	color: black;
+}
+
+.facets .bootstrap-select label {
+	color: #F7F7F7;
+}
+
+.facets .buttons {
+	padding: 50px 0 50px 0;
+}
+
+.facets .remove-selections {
+	padding: 0px 0 25px 0;
+}
+
+.facets .btn-primary {
+	background: #464646;
+}
+
+.facets .facet {
+	margin: 8px 0 20px 0;
+}
+
+.results {
+	padding-top: 50px;
+}
+
+.results a, .results strong {
+	color: #464646;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.results .result-header {
+	text-transform: uppercase;
+}
+
+.report-results {
+	color: #464646;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.report-results span, .report-results strong  {
+	padding: 0 5px;
+	display:inline-block;
+}
+
+.report-results .title-row {
+	font-weight: bold;
+}
+
+.report-results .fishes, .report-results .fishers, .report-results .gears, .report-results .places {
+	padding: 35px;
+}
+
+.col-centered {
+	float: none;
+    margin: 0 auto;
+}
+
+.modal-body .modal-wrapper{
+	float:none;
+}

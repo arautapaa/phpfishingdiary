@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<database name="kala" defaultIdMethod="native" defaultPhpNamingMethod="underscore">
+  <table name="draught" idMethod="native" phpName="Draught">
+    <column name="draught_id" phpName="DraughtId" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="fish_id" phpName="FishId" type="INTEGER" required="true"/>
+    <column name="place_id" phpName="PlaceId" type="INTEGER" required="true"/>
+    <column name="fisher_id" phpName="FisherId" type="INTEGER" required="true"/>
+    <column name="gear_id" phpName="GearId" type="INTEGER" required="true"/>
+    <column name="weight" phpName="Weight" type="INTEGER" required="true"/>
+    <column name="date" phpName="Date" type="DATE" required="true"/>
+    <column name="length" phpName="Length" type="DOUBLE"/>
+    <column name="user_id" phpName="UserId" type="INTEGER" required="true"/>
+    <column name="DELETABLE" phpName="Deletable" type="SMALLINT" defaultValue="0"/>
+    <foreign-key foreignTable="fish" name="draught_ibfk_1">
+      <reference local="fish_id" foreign="fish_id"/>
+    </foreign-key>
+    <foreign-key foreignTable="fisher" name="draught_ibfk_2">
+      <reference local="fisher_id" foreign="fisher_id"/>
+    </foreign-key>
+    <foreign-key foreignTable="gear" name="draught_ibfk_3">
+      <reference local="gear_id" foreign="gear_id"/>
+    </foreign-key>
+    <foreign-key foreignTable="place" name="draught_ibfk_7">
+      <reference local="place_id" foreign="place_id"/>
+    </foreign-key>
+    <foreign-key foreignTable="user" name="draught_ibfk_8">
+      <reference local="user_id" foreign="USER_ID"/>
+    </foreign-key>
+    <index name="fish_id">
+      <index-column name="fish_id"/>
+    </index>
+    <index name="fisher_id">
+      <index-column name="fisher_id"/>
+    </index>
+    <index name="gear_id">
+      <index-column name="gear_id"/>
+    </index>
+    <index name="place_id">
+      <index-column name="place_id"/>
+    </index>
+    <index name="user_id">
+      <index-column name="user_id"/>
+    </index>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="fish" idMethod="native" phpName="Fish">
+    <column name="fish_id" phpName="FishId" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="name" phpName="Name" type="VARCHAR" size="100" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="fisher" idMethod="native" phpName="Fisher">
+    <column name="fisher_id" phpName="FisherId" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="name" phpName="Name" type="VARCHAR" size="200" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="gear" idMethod="native" phpName="Gear">
+    <column name="gear_id" phpName="GearId" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="name" phpName="Name" type="VARCHAR" size="200" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="place" idMethod="native" phpName="Place">
+    <column name="place_id" phpName="PlaceId" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="name" phpName="Name" type="VARCHAR" size="100" required="true"/>
+    <column name="latitude" phpName="Latitude" type="VARCHAR" size="200"/>
+    <column name="longitude" phpName="Longitude" type="VARCHAR" size="200"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="user" idMethod="native" phpName="User">
+    <column name="USER_ID" phpName="UserId" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="USERNAME" phpName="Username" type="VARCHAR" size="150" required="true"/>
+    <column name="PASSWORD" phpName="Password" type="VARCHAR" size="500" required="true"/>
+    <column name="SALT" phpName="Salt" type="VARCHAR" size="100" required="true"/>
+    <column name="REGISTERED" phpName="Registered" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+    <column name="ACTIVE" phpName="Active" type="SMALLINT" defaultValue="1"/>
+    <column name="HASH" phpName="Hash" type="VARCHAR" size="255" required="true"/>
+    <column name="SESSIONEXPIRE" phpName="Sessionexpire" type="TIMESTAMP" required="true" defaultValue="0000-00-00 00:00:00"/>
+    <unique name="HASH">
+      <unique-column name="HASH"/>
+    </unique>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="userlogin" idMethod="native" phpName="Userlogin">
+    <column name="USER_ID" phpName="UserId" type="INTEGER" required="true"/>
+    <column name="LOGIN_IP" phpName="LoginIp" type="VARCHAR" size="250" required="true"/>
+    <column name="TRIED" phpName="Tried" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+    <column name="USERAGENT" phpName="Useragent" type="VARCHAR" size="250" required="true"/>
+    <column name="SUCCESS" phpName="Success" type="SMALLINT" defaultValue="0"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="usertoken" idMethod="native" phpName="Usertoken">
+    <column name="USER_ID" phpName="UserId" type="INTEGER" primaryKey="true" required="true"/>
+    <column name="TOKEN" phpName="Token" type="VARCHAR" size="255" required="true"/>
+    <column name="SERVICE" phpName="Service" type="VARCHAR" size="50" primaryKey="true" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+</database>

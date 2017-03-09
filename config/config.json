@@ -1,0 +1,12 @@
+{
+	"login_file" : "view/login.php",
+	"notFoundFile" : "view/404.php",
+	"redirect_file" : "view/redirect.php",
+	"accesscontrol_page" : "view/accesserror.php",
+	"database" : {
+		"host" : "localhost",
+		"user" : "root",
+		"password" : "", 
+		"name" : "kala"
+	}
+}

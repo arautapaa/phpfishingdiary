@@ -1,0 +1,31 @@
+{
+    "propel": {
+        "database": {
+            "connections": {
+                "kala": {
+                    "adapter": "mysql",
+                    "classname": "Propel\\Runtime\\Connection\\ConnectionWrapper",
+                    "dsn": "mysql:host=localhost;dbname=kala",
+                    "user": "root",
+                    "password": "",
+                    "attributes": [],
+                    "settings" : {
+                        "charset": "utf8",
+                        "queries" : {
+                            "utf8": "SET NAMES utf8"
+                        }
+                    }
+                }
+            }
+        },
+        "runtime": {
+            "defaultConnection": "kala",
+            "connections": ["kala"]
+        },
+        "generator": {
+            "defaultConnection": "kala",
+            "connections": ["kala"]
+        }
+    }
+}
+

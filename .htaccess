@@ -1,0 +1,7 @@
+AddCharset UTF-8 .php 
+AddDefaultCharset utf-8
+
+RewriteEngine On
+
+RewriteCond $1 !^(dispatcher\.php|Doctrine|(.*)\.css|(.*)\.js|images|(.*)fonts(.*)|robots\.txt)
+RewriteRule ^(.*)$ /dispatcher.php?url=$1

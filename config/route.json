@@ -1,0 +1,123 @@
+{
+	"patterns": [
+		{
+			"pattern" : "#^/$#",
+			"view" : "view/draughts/getAllDraughts.php",
+			"controller" : {
+				"name" : "FishController",
+				"path" : "controller/FishController.php"
+			},
+			"authenticate" : true,
+			"https" : false
+		},
+		{
+			"pattern" : "#^/fishes/?$#",
+			"view" : "view/draughts/getAllDraughts.php",
+			"controller" : {
+				"name" : "FishController",
+				"path" : "controller/FishController.php"
+			},
+			"authenticate" : true,
+			"https" : false
+		},
+		{
+			"pattern" : "#^/fishes/orderby/(?P<orderBy>[A-Za-z]+)/?$#",
+			"view" : "view/draughts/getAllDraughts.php",
+			"controller" : {
+				"name" : "FishController",
+				"path" : "controller/FishController.php"
+			},
+			"authenticate" : true,
+			"https" : false
+		},
+		{
+			"pattern" : "#^/login/?$#",
+			"view" : "view/login.php",
+			"authenticate" : false,
+			"https" : false
+		},
+		{
+			"pattern" : "#^/performlogin/?$#",
+			"controller" : { 
+				"name" : "LoginController",
+				"path" : "controller/LoginController.php"
+			}, 
+			"authenticate" : false,
+			"https" : false
+		},
+		{
+			"pattern" : "#^/performregistration/?$#",
+			"controller" : { 
+				"name" : "RegistrationController",
+				"path" : "controller/RegistrationController.php"
+			}, 
+			"authenticate" : false,
+			"https" : false
+		},		
+		{
+			"pattern" : "#^/register/?$#",
+			"view" : "view/register.php",
+			"authenticate" : false,
+			"https" : false
+		},
+		{
+			"pattern" : "#^/logout/?$#",
+			"controller" : { 
+				"name" : "LogoutController",
+				"path" : "controller/LogoutController.php"
+			}, 
+			"authenticate" : true,
+			"https" : false
+		},	
+		{
+			"pattern" : "#^/fishes/orderby/(?P<orderBy>[A-Za-z]+)/(?P<order>asc|desc)/?$#",
+			"view" : "view/draughts/getAllDraughts.php",
+			"controller" : {
+				"name" : "FishController",
+				"path" : "controller/FishController.php"
+			},
+			"authenticate" : true,
+			"https" : false
+		},   
+		{
+			"pattern" : "#^/fishes/fish/(?P<fishId>[0-9]+)/?$#",
+			"controller" : {
+				"name" : "FishController",
+				"path" : "controller/FishController.php"
+			},
+			"view" : "view/draughts/draught.php",
+			"authenticate" : true,
+			"https" : false
+		},
+		{
+			"pattern" : "#^/new/?$#",
+			"view" : "view/draughts/newDraught.php",
+			"controller" : {
+				"name" : "NewDraughtController",
+				"path" : "controller/NewDraughtController.php"
+			},
+			"authenticate" : true,
+			"https" : false
+		},
+		{
+			"pattern" : "#^/draughts/save/$#",
+			"controller" : {
+				"name" : "FishController",
+				"path" : "controller/FishController.php"
+			},
+			"view" : "view/draughts/getAllDraughts.php",
+			"authenticate" : true,
+			"https" : false
+		},
+		{
+			"pattern" : "#^/adminconsole/routes/$#",
+			"controller" : {
+				"name" : "RouteController",
+				"path" : "controller/RouteController.php"
+			},
+			"view" : "view/routes.php",
+			"authenticate" : true,
+			"https" : false
+		}
+	]
+}

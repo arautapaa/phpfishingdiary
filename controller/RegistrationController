@@ -1,0 +1,9 @@
+<?php 
+
+require_once('Controller.php');
+
+class RegistrationController extends ControllerImpl implements Controller {
+	
+}
+
+?>
