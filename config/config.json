@@ -5,8 +5,8 @@
 	"accesscontrol_page" : "view/accesserror.php",
 	"database" : {
 		"host" : "localhost",
-		"user" : "root",
-		"password" : "", 
-		"name" : "kala"
+		"user" : "ur_user",
+		"password" : "ur_pw", 
+		"name" : "ur_db"
 	}
 }
